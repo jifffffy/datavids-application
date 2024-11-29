@@ -1,0 +1,39 @@
+version: '3.0'
+services:
+    backend:
+        container_name: datavids-backend
+        image: mongo:latest
+        restart: always
+        environment:
+            DB_NAME: datavids
+            MONGO_INITDB_DATABASE: datavids
+        ports:
+            - 27017:27017
+        volumes:
+            - mongodb_data_container:/data/db
+
+    greenmail:
+        image: greenmail/standalone:latest
+        environment:
+          - JAVA_OPTS=-Dgreenmail.verbose
+        ports:
+          - 3025:3025 # SMTP
+          - 3110:3110 # POP3
+          - 3143:3143 # IMAP
+          - 3465:3465 # SMTPS
+          - 3993:3993 # IMAPS
+          - 3995:3995 # POP3S
+          - 8081:8080 # API
+    roundcube:
+      image: roundcube/roundcubemail:latest
+      depends_on:
+        - greenmail
+      ports:
+        - 8000:80
+      environment:
+        - ROUNDCUBEMAIL_DEFAULT_HOST=greenmail  # IMAP server - tls:// prefix for STARTTLS, ssl:// for SSL/TLS
+        - ROUNDCUBEMAIL_DEFAULT_PORT=3143       # IMAP port
+        - ROUNDCUBEMAIL_SMTP_SERVER=greenmail   # SMTP server - tls:// prefix for STARTTLS, ssl:// for SSL/TLS
+        - ROUNDCUBEMAIL_SMTP_PORT=3025          # SMTP port
+volumes:
+    mongodb_data_container:

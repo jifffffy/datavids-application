@@ -10,7 +10,7 @@ const checkIcon = (
   </svg>
 );
 
-const List = ({ text }:{text:string}) => (
+const List = ({ text }: { text: string }) => (
   <p className="mb-5 flex items-center text-lg font-medium text-body-color">
     <span className="mr-4 flex h-[30px] w-[30px] items-center justify-center rounded-md bg-primary bg-opacity-10 text-primary">
       {checkIcon}
@@ -59,7 +59,7 @@ const HowTo = () => {
                 </div>
               </div>
               <div>
-                <Video videourl="https://datavidsio.s3.amazonaws.com/vids/DataVid1_music.mp4" introimage="/images/WizardVideo_Image.jpg"/>
+                <Video videourl="https://datavidsio.s3.amazonaws.com/vids/DataVid1_music.mp4" introimage="/images/WizardVideo_Image.jpg" />
               </div>
             </div>
           </div>
@@ -81,11 +81,11 @@ const HowTo = () => {
                 </div>
               </div>
               <div>
-                <Video videourl="https://datavidsio.s3.amazonaws.com/vids/DataVids-AI_music.mp4" introimage="/images/AIVideo_Image.jpg"/>
+                <Video videourl="https://datavidsio.s3.amazonaws.com/vids/DataVids-AI_music.mp4" introimage="/images/AIVideo_Image.jpg" />
               </div>
             </div>
           </div>
-{/* 
+          {/* 
           <div className="mt-10 border-t-2 pt-8">
             <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
               <div>
@@ -109,18 +109,18 @@ const HowTo = () => {
           </div>
 */}
           <div className="mt-10 border-t-2 pt-8 justify-center items-center">
-             <div className="justify-center items-center flex">
-                <h2 className="text-2xl lg:text-4xl mb-5 font-bold">Why Wait? Get Started Today</h2><br></br>
-              </div>
-                <div className="justify-center items-center flex">
-                <Link
-                    href="/signin"
-                    className="rounded-md bg-primary py-4 px-8 text-base font-semibold text-white duration-300 ease-in-out hover:bg-primary/80"
-                  >
-                   🔥 Sign Up for free
-                  </Link>
-                </div>
-            
+            <div className="justify-center items-center flex">
+              <h2 className="text-2xl lg:text-4xl mb-5 font-bold">Why Wait? Get Started Today</h2><br></br>
+            </div>
+            <div className="justify-center items-center flex">
+              <Link
+                href="/signin"
+                className="rounded-md bg-primary py-4 px-8 text-base font-semibold text-white duration-300 ease-in-out hover:bg-primary/80"
+              >
+                🔥 Sign Up for free
+              </Link>
+            </div>
+
           </div>
 
         </div>

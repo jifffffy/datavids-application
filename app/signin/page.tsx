@@ -24,6 +24,7 @@ export default async function SigninPage(props: Props) {
   }
 
   let allowLogin = process.env.ALLOW_LOGIN;
+  console.log(`allowLogin = ${allowLogin}`);
   if (searchParams && searchParams["secret"]) { 
     console.log("secret passed");
   }

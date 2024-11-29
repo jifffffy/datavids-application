@@ -66,7 +66,7 @@ export const authOptions: NextAuthOptions = {
           //console.log('TOK: '+JSON.stringify(token));
           //user means first time called
           //console.log("jwt call back "+trigger);
-          //console.log("USER: "+JSON.stringify(user));
+          console.log("USER: "+JSON.stringify(user));
         
           if (user){
               if (user?.id) token.id = user.id;
